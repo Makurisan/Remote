@@ -1,0 +1,6 @@
+; XPubZip.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XPubZip"
+
+EXPORTS
+    ; Explicit exports can go here
