@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{80d5faf8-2575-4ce2-b5ba-709325dd0e40}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{aa52f7ae-3a35-4e26-8dc6-66dfd4062fb3}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{b94bc4b9-37cf-45ca-b80c-e10841ea0b6b}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="SModelInd">
+      <UniqueIdentifier>{ed4d6558-d1f6-42bc-a6d3-45cb635023fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sxml">
+      <UniqueIdentifier>{151a540b-ae1f-4f67-8ea0-10e55632a3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sstldef">
+      <UniqueIdentifier>{30a02696-17ae-4755-86a7-2915041a1a2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SErrors">
+      <UniqueIdentifier>{49592bf2-9fc8-409b-8004-33c061d900f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSyncEng">
+      <UniqueIdentifier>{63da3a34-58a3-4519-b6f4-b5489d57eab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="STools">
+      <UniqueIdentifier>{2969877a-4016-4b7a-a4f4-c1d8b9e6ddda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SMD5">
+      <UniqueIdentifier>{e64ab325-a982-46ca-af23-51d83baf42ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SExpression">
+      <UniqueIdentifier>{40db8789-9032-418e-982e-450c32c714fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SOpSys">
+      <UniqueIdentifier>{8fe48c44-460e-4305-9475-8a7b43d89c6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XPubModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\Constants.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\DBDefinitions.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\DBStoneInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\DBStoneInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\DBTemplateInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\DBTemplateInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\DTNSupport.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ERModelInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ExternalEditors.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\FormatDateTime.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\FormatNumber.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\IFSEntityInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\IFSEntityInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\Messages.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ModelDef.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ModelInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelERModelInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelERModelInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelFieldsInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelFieldsInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelIFSInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelIFSInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelPythonInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelStoneInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelStoneInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelTemplateInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\MPModelTemplateInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\OpenedModules.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProgressFeature.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFiles_Base.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFiles_ER.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFiles_IFS.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFiles_Python.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFiles_Stone.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFiles_Template.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ProjectFilesInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\PropStoneInd.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\PropStoneInd_Sync.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ReservedERWords.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\XMLModelClasses.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\XPubVariant.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="SModelInd\ZoomFactor.cpp">
+      <Filter>SModelInd</Filter>
+    </ClCompile>
+    <ClCompile Include="Sxml\MarkupSTL.cpp">
+      <Filter>Sxml</Filter>
+    </ClCompile>
+    <ClCompile Include="Sxml\XPubMarkUp.cpp">
+      <Filter>Sxml</Filter>
+    </ClCompile>
+    <ClCompile Include="SSTLdef\STLdef.cpp">
+      <Filter>Sstldef</Filter>
+    </ClCompile>
+    <ClCompile Include="SSyncEng\SyncEngine.cpp">
+      <Filter>SSyncEng</Filter>
+    </ClCompile>
+    <ClCompile Include="SSyncEng\SyncEngineBase.cpp">
+      <Filter>SSyncEng</Filter>
+    </ClCompile>
+    <ClCompile Include="SSyncEng\SyncGroups.cpp">
+      <Filter>SSyncEng</Filter>
+    </ClCompile>
+    <ClCompile Include="STools\CRC32.cpp">
+      <Filter>STools</Filter>
+    </ClCompile>
+    <ClCompile Include="STools\FileRowParser.cpp">
+      <Filter>STools</Filter>
+    </ClCompile>
+    <ClCompile Include="STools\PathUtil.cpp">
+      <Filter>STools</Filter>
+    </ClCompile>
+    <ClCompile Include="STools\ProjectCompare.cpp">
+      <Filter>STools</Filter>
+    </ClCompile>
+    <ClCompile Include="STools\StringParser.cpp">
+      <Filter>STools</Filter>
+    </ClCompile>
+    <ClCompile Include="STools\Utils.cpp">
+      <Filter>STools</Filter>
+    </ClCompile>
+    <ClCompile Include="Smd5\MD5.cpp">
+      <Filter>SMD5</Filter>
+    </ClCompile>
+    <ClCompile Include="SExpression\Expression.cpp">
+      <Filter>SExpression</Filter>
+    </ClCompile>
+    <ClCompile Include="SExpression\HtmlStoneImage.cpp">
+      <Filter>SExpression</Filter>
+    </ClCompile>
+    <ClCompile Include="SExpression\PythonInterface.cpp">
+      <Filter>SExpression</Filter>
+    </ClCompile>
+    <ClCompile Include="SExpression\XPubPythonWrapper.cpp">
+      <Filter>SExpression</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XPubModel.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\XPubModel.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\Constants.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\DBDefinitions.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\DBStoneInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\DBTemplateInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\DTNSupport.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ERModelInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ExternalEditors.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\FormatDateTime.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\FormatNumber.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\IFSEntityInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\Messages.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ModelDef.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ModelExpImp.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ModelInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\MPModelERModelInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\MPModelFieldsInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\MPModelIFSInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\MPModelPythonInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\MPModelStoneInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\MPModelTemplateInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\OpenedModules.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProgressFeature.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFiles_Base.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFiles_ER.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFiles_IFS.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFiles_Python.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFiles_Stone.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFiles_Template.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ProjectFilesInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\PropStoneInd.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ReservedERWords.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\XMLModelClasses.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\XPubVariant.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="SModelInd\ZoomFactor.h">
+      <Filter>SModelInd</Filter>
+    </ClInclude>
+    <ClInclude Include="Sxml\MarkupSTL.h">
+      <Filter>Sxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Sxml\XMLTagNames.h">
+      <Filter>Sxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Sxml\XPubMarkUp.h">
+      <Filter>Sxml</Filter>
+    </ClInclude>
+    <ClInclude Include="SSTLdef\STLdef.h">
+      <Filter>Sstldef</Filter>
+    </ClInclude>
+    <ClInclude Include="SErrors\ErrorNumbers.h">
+      <Filter>SErrors</Filter>
+    </ClInclude>
+    <ClInclude Include="SSyncEng\SyncEngine.h">
+      <Filter>SSyncEng</Filter>
+    </ClInclude>
+    <ClInclude Include="SSyncEng\SyncEngineBase.h">
+      <Filter>SSyncEng</Filter>
+    </ClInclude>
+    <ClInclude Include="SSyncEng\SyncGroups.h">
+      <Filter>SSyncEng</Filter>
+    </ClInclude>
+    <ClInclude Include="STools\CRC32.h">
+      <Filter>STools</Filter>
+    </ClInclude>
+    <ClInclude Include="STools\FileRowParser.h">
+      <Filter>STools</Filter>
+    </ClInclude>
+    <ClInclude Include="STools\PathUtil.h">
+      <Filter>STools</Filter>
+    </ClInclude>
+    <ClInclude Include="STools\ProjectCompare.h">
+      <Filter>STools</Filter>
+    </ClInclude>
+    <ClInclude Include="STools\StringParser.h">
+      <Filter>STools</Filter>
+    </ClInclude>
+    <ClInclude Include="STools\Utils.h">
+      <Filter>STools</Filter>
+    </ClInclude>
+    <ClInclude Include="Smd5\MD5.h">
+      <Filter>SMD5</Filter>
+    </ClInclude>
+    <ClInclude Include="SExpression\Expression.h">
+      <Filter>SExpression</Filter>
+    </ClInclude>
+    <ClInclude Include="SExpression\HtmlStoneImage.h">
+      <Filter>SExpression</Filter>
+    </ClInclude>
+    <ClInclude Include="SExpression\PythonInterface.h">
+      <Filter>SExpression</Filter>
+    </ClInclude>
+    <ClInclude Include="SExpression\XPubPythonWrapper.h">
+      <Filter>SExpression</Filter>
+    </ClInclude>
+    <ClInclude Include="SOpSys\charwchar.h">
+      <Filter>SOpSys</Filter>
+    </ClInclude>
+    <ClInclude Include="SOpSys\types.h">
+      <Filter>SOpSys</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="XPubModel.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+; XPubTagBuilder.def : Declares the module parameters for the DLL.
+
+EXPORTS
+  XPubTagBuilderInitialize
+  XPubTagBuilderTerminate
+  XPubTagBuilderInit
+  XPubTagBuilderLicense
+  XPubTagBuilderToPDF
+  XPubTagBuilderToPDFFile
+  XPubTagBuilderSetPassword
+  XPubTagBuilderToRTF
+  XPubTagBuilderToRTFFile
+  XPubTagBuilderClose

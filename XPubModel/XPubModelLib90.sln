@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XPubModelLib90", "XPubModelLib90.vcproj", "{410F7652-C14D-4E32-AD36-5A2A45EB19D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugNoPython|Win32 = DebugNoPython|Win32
+		Release|Win32 = Release|Win32
+		ReleaseNoPython|Win32 = ReleaseNoPython|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.Debug|Win32.Build.0 = Debug|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.DebugNoPython|Win32.ActiveCfg = DebugNoPython|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.DebugNoPython|Win32.Build.0 = DebugNoPython|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.Release|Win32.ActiveCfg = Release|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.Release|Win32.Build.0 = Release|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.ReleaseNoPython|Win32.ActiveCfg = ReleaseNoPython|Win32
+		{410F7652-C14D-4E32-AD36-5A2A45EB19D8}.ReleaseNoPython|Win32.Build.0 = ReleaseNoPython|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
