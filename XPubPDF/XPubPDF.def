@@ -1,0 +1,7 @@
+; XPubPDF.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XPubPDF"
+
+EXPORTS
+    ; Explicit exports can go here
+

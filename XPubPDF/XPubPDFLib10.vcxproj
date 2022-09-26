@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>XPubPDFLib</ProjectName>
+    <ProjectGuid>{B809AC08-437E-4255-BF92-C015F14DCEFA}</ProjectGuid>
+    <RootNamespace>XPubPDFLib90</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\XPublisher.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\XPublisher.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DebugLib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DebugLib\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ReleaseLib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ReleaseLib\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_CRT_SECURE_NO_DEPRECATE %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\libpng;.\zlib;..\XPubMagic;..\XPubModel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)XPubPDFLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_CRT_SECURE_NO_DEPRECATE  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>.\libpng;.\zlib;..\XPubMagic;..\XPubModel;..\..\GraphicsMagick-1.3.5\;..\..\GraphicsMagick-1.3.5\Magick++\lib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;XPUB_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)XPubPDFLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="pdfann.cpp" />
+    <ClCompile Include="PDFAnnotation.cpp" />
+    <ClCompile Include="PDFBaseFont.cpp" />
+    <ClCompile Include="PDFCell.cpp" />
+    <ClCompile Include="PDFDocument.cpp" />
+    <ClCompile Include="pdfenc.cpp" />
+    <ClCompile Include="pdffnc.cpp" />
+    <ClCompile Include="pdffnt.cpp" />
+    <ClCompile Include="PDFFontDesc.cpp" />
+    <ClCompile Include="PDFFrame.cpp" />
+    <ClCompile Include="pdfgrp.cpp" />
+    <ClCompile Include="PDFImage.cpp" />
+    <ClCompile Include="pdfimg.cpp" />
+    <ClCompile Include="pdfini.cpp" />
+    <ClCompile Include="PDFLayer.cpp" />
+    <ClCompile Include="PDFManager.cpp" />
+    <ClCompile Include="pdfoe.cpp" />
+    <ClCompile Include="PDFOutlineEntry.cpp" />
+    <ClCompile Include="PDFPage.cpp" />
+    <ClCompile Include="pdftab.cpp" />
+    <ClCompile Include="PDFTable.cpp" />
+    <ClCompile Include="pdftb.cpp" />
+    <ClCompile Include="PDFTemplate.cpp" />
+    <ClCompile Include="PDFTextBox.cpp" />
+    <ClCompile Include="pdfttf.cpp" />
+    <ClCompile Include="PDFTTFFont.cpp" />
+    <ClCompile Include="PDFTTFFontDesc.cpp" />
+    <ClCompile Include="PDFType0Font.cpp" />
+    <ClCompile Include="PDFUtil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="PDFAnnotation.h" />
+    <ClInclude Include="PDFBaseFont.h" />
+    <ClInclude Include="PDFCell.h" />
+    <ClInclude Include="pdfdef.h" />
+    <ClInclude Include="PDFDocument.h" />
+    <ClInclude Include="pdferr.h" />
+    <ClInclude Include="pdffnc.h" />
+    <ClInclude Include="PDFFontDesc.h" />
+    <ClInclude Include="PDFFrame.h" />
+    <ClInclude Include="PDFImage.h" />
+    <ClInclude Include="pdfimg.h" />
+    <ClInclude Include="PDFLayer.h" />
+    <ClInclude Include="PDFManager.h" />
+    <ClInclude Include="PDFOutlineEntry.h" />
+    <ClInclude Include="PDFPage.h" />
+    <ClInclude Include="PDFTable.h" />
+    <ClInclude Include="PDFTemplate.h" />
+    <ClInclude Include="PDFTextBox.h" />
+    <ClInclude Include="pdfttf.h" />
+    <ClInclude Include="PDFTTFFont.h" />
+    <ClInclude Include="PDFTTFFontDesc.h" />
+    <ClInclude Include="PDFType0Font.h" />
+    <ClInclude Include="PDFUtil.h" />
+    <ClInclude Include="XPubPDFExpImp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
