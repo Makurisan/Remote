@@ -1,0 +1,31 @@
+E:\Multimedia\XPublisher\XPubRtfCtrl\Source
+E:\Te\XPubRtfCtrl\Source
+
+a)
+
+TER_FRM1.C 
+  1206,
+b) TER.C
+E:\Multimedia\XPublisher\XPubRtfCtrl\Source\TER.C
+E:\Te\XPubRtfCtrl\Source\TER.C
+
+c)
+E:\Multimedia\XPublisher\XPubRtfCtrl\Source\ter_rtf4.c
+E:\Te\XPubRtfCtrl\Source\ter_rtf4.c
+
+
+1.
+  In Ter_init.c line 571 SnapToGrid auf False setzen
+
+    SnapToGrid=FALSE;           // snap to ruler items to an invisible grid
+
+2. Änderungen in RTF Klasse. Wenn ein Dokument auf ReadOnly sitzt, dann wird
+   RTF Dokument auf Formulareingabe geschaltet.
+   verschiedene weitere Änderungen wegen Formularfelder
+
+2. Neue Funktionen
+
+    MAK: muss erst noch eingesetzt werden
+
+    TerGetEffectiveFontEx
+    TerGetSectFromLine

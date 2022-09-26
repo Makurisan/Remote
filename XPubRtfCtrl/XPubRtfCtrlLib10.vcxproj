@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>XPubRtfCtrlLib</ProjectName>
+    <ProjectGuid>{80CB24D2-F6EF-4868-BF60-EC19002A8E96}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\XPublisher.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DebugLib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DebugLIb\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ReleaseLib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ReleaseLib\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)XPubRtfCtrlLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)XPubRtfCtrlLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Ter.c" />
+    <ClCompile Include="Source\Ter1.c" />
+    <ClCompile Include="Source\Ter2.c" />
+    <ClCompile Include="Source\Ter3.c" />
+    <ClCompile Include="Source\Ter4.c" />
+    <ClCompile Include="Source\Ter_bar.c" />
+    <ClCompile Include="Source\Ter_blk.c" />
+    <ClCompile Include="Source\ter_blk1.c" />
+    <ClCompile Include="Source\Ter_ctl.c" />
+    <ClCompile Include="Source\Ter_dlg.c" />
+    <ClCompile Include="Source\Ter_drag.c" />
+    <ClCompile Include="Source\Ter_draw.c" />
+    <ClCompile Include="Source\ter_drg.c" />
+    <ClCompile Include="Source\Ter_fmt.c" />
+    <ClCompile Include="Source\Ter_fmt1.c" />
+    <ClCompile Include="Source\Ter_fmt2.c" />
+    <ClCompile Include="Source\Ter_frm.c" />
+    <ClCompile Include="Source\Ter_frm1.c" />
+    <ClCompile Include="Source\Ter_frm2.c" />
+    <ClCompile Include="Source\ter_img.c" />
+    <ClCompile Include="Source\Ter_init.c" />
+    <ClCompile Include="Source\Ter_io.c" />
+    <ClCompile Include="Source\Ter_misc.c" />
+    <ClCompile Include="Source\Ter_ole.c" />
+    <ClCompile Include="Source\Ter_pag1.c" />
+    <ClCompile Include="Source\Ter_page.c" />
+    <ClCompile Include="Source\ter_par.c" />
+    <ClCompile Include="Source\ter_pdf.c" />
+    <ClCompile Include="Source\ter_prt.c" />
+    <ClCompile Include="Source\Ter_rtf.c" />
+    <ClCompile Include="Source\Ter_rtf1.c" />
+    <ClCompile Include="Source\ter_rtf2.c" />
+    <ClCompile Include="Source\Ter_rtf3.c" />
+    <ClCompile Include="Source\ter_rtf4.c" />
+    <ClCompile Include="Source\Ter_spl.c" />
+    <ClCompile Include="Source\Ter_tbl.c" />
+    <ClCompile Include="Source\Ter_tbl1.c" />
+    <ClCompile Include="Source\ter_tbl2.c" />
+    <ClCompile Include="Source\ter_trk.c" />
+    <ClCompile Include="Source\Ter_wrap.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ter.h" />
+    <ClInclude Include="Source\Ter1.h" />
+    <ClInclude Include="Ter_cmd.h" />
+    <ClInclude Include="Source\Ter_def.h" />
+    <ClInclude Include="Source\Ter_dlg.h" />
+    <ClInclude Include="Source\Ter_hdr.h" />
+    <ClInclude Include="Source\ter_msg.h" />
+    <ClInclude Include="Source\ter_pdf.h" />
+    <ClInclude Include="Source\ter_prot.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

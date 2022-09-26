@@ -1,0 +1,1182 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "TER_DLG.H\0"
+END
+
+PRINTABORTPARAM DIALOG 33, 27, 80, 42
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Printing in Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Page: ", 101, 13, 7, 20, 8
+    LTEXT           "1", IDC_PAGE_NO, 34, 7, 20, 8
+    PUSHBUTTON      "Cancel", IDCANCEL, 14, 21, 50, 14
+END
+
+JUMPPARAM DIALOG 27, 24, 121, 46
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Jump to Line Number :", -1, 7, 9, 71, 9, NOT WS_GROUP
+    EDITTEXT        IDC_JUMP_TO, 82, 7, 32, 14
+    DEFPUSHBUTTON   "OK", IDOK, 7, 25, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 64, 25, 50, 14
+END
+
+REPLACEPARAM DIALOG 60, 28, 169, 126
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Replace String Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Replace:", -1, 7, 7, 30, 8
+    EDITTEXT        IDC_REPLACE_STRING, 7, 17, 155, 14
+    LTEXT           "With:", -1, 7, 35, 21, 8
+    EDITTEXT        IDC_REPLACE_WITH, 7, 47, 155, 14
+    CONTROL         "Entire File", IDC_REPLACE_FILE, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP, 9, 65, 60, 10
+    CONTROL         "Highlighted Block", IDC_REPLACE_BLOCK, "Button", 
+                    BS_AUTORADIOBUTTON, 9, 76, 72, 10
+    CONTROL         "Verify Each Replace", IDC_REPLACE_VERIFY, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 9, 90, 80, 8
+    DEFPUSHBUTTON   "OK", IDOK, 55, 105, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 112, 105, 50, 14, WS_GROUP
+END
+
+SEARCHPARAM DIALOG 66, 11, 169, 92
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Search String Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Locate:", -1, 8, 7, 30, 8
+    EDITTEXT        IDC_SEARCH_STRING, 7, 17, 155, 14
+    CONTROL         "From Beginning of File", IDC_SEARCH_BEGIN, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP, 8, 36, 84, 10
+    CONTROL         "Forward", IDC_SEARCH_FOR, "Button", BS_AUTORADIOBUTTON, 
+                    8, 46, 60, 10
+    CONTROL         "Backward", IDC_SEARCH_BACK, "Button", 
+                    BS_AUTORADIOBUTTON, 8, 56, 60, 10
+    CONTROL         "Case Sensitive", IDC_SEARCH_CASE, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 97, 37, 65, 8
+    DEFPUSHBUTTON   "OK", IDOK, 49, 71, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 112, 71, 50, 14, WS_GROUP
+END
+
+UNDOPARAM DIALOG 20, 20, 196, 114
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Undo Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Insert at Line Number", -1, 7, 7, 80, 8
+    EDITTEXT        IDC_UNDO_LINE, 87, 7, 25, 14, WS_GROUP
+    LTEXT           "Column Number", -1, 117, 7, 55, 8
+    EDITTEXT        IDC_UNDO_COL, 173, 7, 16, 14
+    LTEXT           "Text", IDC_UNDO_HEADER, 9, 19, 149, 8, NOT WS_GROUP
+    EDITTEXT        IDC_UNDO_TEXT, 7, 27, 180, 60, ES_MULTILINE | WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 53, 92, 50, 14, WS_GROUP
+    DEFPUSHBUTTON   "Cancel", IDCANCEL, 113, 92, 50, 14, WS_GROUP
+END
+
+FONTPARAM DIALOG 73, 17, 124, 133
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Font Selection"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Face Name", -1, 23, 7, 51, 8, NOT WS_GROUP
+    COMBOBOX        IDC_FONT_TYPES, 7, 15, 77, 93, CBS_SIMPLE | CBS_SORT | 
+                    CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL
+    CTEXT           "Point", -1, 91, 7, 20, 8, NOT WS_GROUP
+    COMBOBOX        IDC_FONT_POINTS, 87, 15, 30, 93, CBS_SIMPLE | CBS_SORT | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 7, 112, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 67, 112, 50, 14
+END
+
+PAGEPARAM DIALOG 32, 20, 166, 122
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Page Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Margin (Inches)", IDC_UNITS, 7, 7, 152, 47
+    LTEXT           "Left:", -1, 25, 23, 16, 8, NOT WS_GROUP
+    EDITTEXT        IDC_LEFT_MARGIN, 45, 19, 21, 14
+    LTEXT           "Right:", -1, 95, 23, 23, 8, NOT WS_GROUP
+    EDITTEXT        IDC_RIGHT_MARGIN, 121, 18, 22, 14
+    LTEXT           "Top:", -1, 25, 38, 16, 8, NOT WS_GROUP
+    EDITTEXT        IDC_TOP_MARGIN, 45, 35, 21, 14
+    LTEXT           "Bottom:", -1, 89, 37, 26, 8, NOT WS_GROUP
+    EDITTEXT        IDC_BOT_MARGIN, 121, 35, 22, 14
+    LTEXT           "Header distance from the Page Top", -1, 7, 59, 118, 8
+    EDITTEXT        IDC_HDR_MARGIN, 135, 56, 24, 14, ES_AUTOHSCROLL
+    LTEXT           "Footer distance from the Page Bottom", -1, 9, 75, 122, 
+                    8
+    EDITTEXT        IDC_FTR_MARGIN, 135, 73, 24, 14, ES_AUTOHSCROLL
+    CONTROL         "All Sections", IDC_ALL_SECTS, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 7, 88, 58, 10
+    DEFPUSHBUTTON   "OK", IDOK, 54, 101, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 109, 101, 50, 14, WS_GROUP
+END
+
+RANGEPARAM DIALOG 9, 27, 119, 154
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Print Range Selection"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Print Range", -1, 7, 7, 105, 95, WS_TABSTOP
+    CONTROL         "Selected Text", IDC_RANGE_SELECTED, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP, 10, 17, 66, 
+                    12
+    CONTROL         "Entire File", IDC_RANGE_ALL, "Button", 
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 10, 30, 64, 12
+    CONTROL         "Current Page", IDC_CUR_PAGE, "Button", 
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 10, 42, 83, 10
+    CONTROL         "Selected Pages", IDC_RANGE_PAGES, "Button", 
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 10, 57, 69, 10
+    LTEXT           "First Page", 101, 30, 70, 34, 8
+    EDITTEXT        IDC_FIRST_PAGE, 67, 68, 24, 14, ES_AUTOHSCROLL
+    LTEXT           "Last Page", 102, 30, 86, 35, 8
+    EDITTEXT        IDC_LAST_PAGE, 67, 84, 24, 14, ES_AUTOHSCROLL
+    LTEXT           "Number of Copies", -1, 8, 108, 65, 8
+    EDITTEXT        IDC_COPIES, 83, 106, 28, 14, ES_AUTOHSCROLL
+    CONTROL         "Collate", IDC_COLATE, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 8, 121, 40, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 133, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 62, 133, 50, 14, WS_GROUP
+END
+
+FILEPARAM DIALOG 29, 25, 214, 47
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Name"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_FILE, 7, 7, 200, 14, WS_GROUP
+    DEFPUSHBUTTON   "OK", IDOK, 101, 26, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 157, 26, 50, 14, WS_GROUP
+END
+
+CLEARTABPARAM DIALOG 87, 42, 118, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Clear a Tab Position"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_BOX, 7, 7, 46, 73, LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 61, 46, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 61, 66, 50, 14
+END
+
+CTLDLGPARAM DIALOG 41, 12, 122, 220
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit TER Styles"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "TER Editor Styles", -1, 7, 7, 108, 141
+    CONTROL         "Word Wrap", IDC_CTL_WORD_WRAP, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 20, 67, 10
+    CONTROL         "Print View", IDC_CTL_PRINT_VIEW, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 28, 91, 10
+    CONTROL         "Vertical Scroll Bar", IDC_CTL_VSCROLL, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 38, 82, 10
+    CONTROL         "Horizontal Scroll Bar", IDC_CTL_HSCROLL, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 47, 95, 10
+    CONTROL         "Border", IDC_CTL_BORDER, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 17, 57, 40, 10
+    CONTROL         "Border Margin", IDC_CTL_BORDER_MARGIN, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 65, 91, 10
+    CONTROL         "Status Ribbon", IDC_CTL_SHOW_STATUS, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 74, 75, 10
+    CONTROL         "Ruler", IDC_CTL_SHOW_RULER, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 17, 84, 40, 10
+    CONTROL         "Tool Bar", IDC_CTL_SHOW_TOOLBAR, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 94, 40, 10
+    CONTROL         "RTF Output", IDC_CTL_OUTPUT_RTF, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 103, 76, 10
+    CONTROL         "Page Mode", IDC_CTL_PAGE_MODE, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 113, 70, 10
+    CONTROL         "Fitted View", IDC_CTL_FITTED_VIEW, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 124, 56, 10
+    CONTROL         "Read Only", IDC_CTL_READ_ONLY, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 17, 134, 72, 10
+    GROUPBOX        "Basic Styles", -1, 7, 151, 108, 40
+    CONTROL         "Visible", IDC_CTL_VISIBLE, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 17, 167, 40, 10
+    CONTROL         "Group", IDC_CTL_GROUP, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 63, 167, 40, 10
+    CONTROL         "Disabled", IDC_CTL_DISABLED, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 17, 178, 40, 10
+    CONTROL         "Tab Stop", IDC_CTL_TABSTOP, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 63, 178, 46, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 199, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 65, 199, 50, 14
+END
+
+SECTIONPARAM DIALOG 95, 42, 201, 254
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Section Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Column", -1, 7, 7, 119, 44
+    LTEXT           "Number of Columns", -1, 13, 18, 68, 8
+    LTEXT           "Space Between the", -1, 13, 28, 68, 8
+    LTEXT           "Columns (inches)", IDC_UNITS, 19, 36, 59, 8
+    EDITTEXT        IDC_SEC_COLUMNS, 87, 15, 17, 14, ES_AUTOHSCROLL
+    EDITTEXT        IDC_SEC_COL_SPACE, 87, 31, 17, 14, ES_AUTOHSCROLL
+    GROUPBOX        "Orientation", -1, 133, 7, 61, 44
+    CONTROL         "Portrait", IDC_PORTRAIT, "Button", BS_AUTORADIOBUTTON, 
+                    137, 20, 39, 10
+    CONTROL         "Landscape", IDC_LANDSCAPE, "Button", BS_AUTORADIOBUTTON, 
+                    137, 33, 48, 10
+    GROUPBOX        "Paper Source", -1, 5, 167, 188, 63
+    LTEXT           "First Page Bin", -1, 12, 177, 74, 8
+    LISTBOX         IDC_FIRST_BIN, 12, 188, 80, 34, LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Other Page Bin", 101, 101, 177, 78, 8
+    LISTBOX         IDC_NEXT_BIN, 102, 188, 82, 34, LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Start Section on New Page", IDC_SEC_NEW_PAGE, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 11, 62, 106, 10
+    CONTROL         "Restart Page Number at", IDC_RESTART_PAGE_NO, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 11, 76, 90, 10
+    EDITTEXT        IDC_PAGE_NO, 101, 75, 19, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 78, 235, 55, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 138, 235, 55, 14
+    GROUPBOX        "", -1, 6, 52, 120, 49
+    CONTROL         "Default", IDC_DEF, "Button", BS_AUTORADIOBUTTON, 137, 
+                    63, 39, 10
+    CONTROL         "Right-to-Left", IDC_RTL, "Button", BS_AUTORADIOBUTTON, 
+                    137, 74, 53, 10
+    CONTROL         "Left-to-Right", IDC_LTR, "Button", BS_AUTORADIOBUTTON, 
+                    137, 86, 52, 10
+    GROUPBOX        "Text Flow", 102, 133, 53, 61, 47
+    GROUPBOX        "Paper Size", -1, 6, 104, 188, 59
+    LISTBOX         IDC_PAPER, 11, 115, 82, 45, WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Width (inches)", IDC_PAPER_WIDTH_LABEL, 102, 119, 55, 8
+    EDITTEXT        IDC_PAPER_WIDTH, 159, 117, 30, 12, ES_AUTOHSCROLL
+    LTEXT           "Height (inches)", IDC_PAPER_HEIGHT_LABEL, 102, 135, 55, 
+                    8
+    EDITTEXT        IDC_PAPER_HEIGHT, 159, 133, 30, 12, ES_AUTOHSCROLL
+END
+
+TOOLBARPARAM DIALOG 6, 28, 444, 12
+STYLE WS_CHILD | WS_VISIBLE | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "H", IDC_BAR_PARA_STYLE, 1, 2, 7, 8
+    COMBOBOX        IDC_FONT_TYPES, 10, 0, 83, 73, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FONT_POINTS, 98, 0, 31, 77, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "B", IDC_BAR_BOLD, "Button", BS_OWNERDRAW | WS_TABSTOP, 
+                    135, 0, 13, 12
+    CONTROL         "I", IDC_BAR_ITALIC, "Button", BS_OWNERDRAW | WS_TABSTOP, 
+                    149, 0, 14, 12
+    CONTROL         "U", IDC_BAR_ULINE, "Button", BS_OWNERDRAW | WS_TABSTOP, 
+                    164, 0, 13, 12
+    CONTROL         "JR", IDC_BAR_JUST_RIGHT, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 195, 0, 13, 12
+    CONTROL         "JC", IDC_BAR_JUST_CENTER, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 209, 0, 13, 12
+    CONTROL         "DS", IDC_BAR_DOUBLE_SPACE, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 240, 0, 13, 12
+    CONTROL         "IL", IDC_BAR_INDENT_LEFT, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 257, 0, 13, 12
+    CONTROL         "IR", IDC_BAR_INDENT_RIGHT, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 271, 0, 13, 12
+    CONTROL         "IH", IDC_BAR_INDENT_HANGING, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 285, 0, 13, 12
+    COMBOBOX        IDC_STYLE_BOX, 361, 0, 83, 73, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "JL", IDC_BAR_JUST_LEFT, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 181, 0, 13, 12
+    CONTROL         "JB", IDC_BAR_JUST_BOTH, "Button", BS_OWNERDRAW | 
+                    WS_TABSTOP, 223, 0, 13, 12
+END
+
+EDITPICTUREPARAM DIALOG 46, 23, 175, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Current Picture Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Height", -1, 13, 22, 30, 8
+    EDITTEXT        IDC_PICT_HEIGHT, 43, 20, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Width", -1, 13, 43, 30, 8
+    EDITTEXT        IDC_PICT_WIDTH, 43, 41, 32, 14, ES_AUTOHSCROLL
+    GROUPBOX        "Alignment", -1, 87, 2, 84, 74
+    CONTROL         "Top", IDC_PICT_ALIGN_TOP, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 92, 14, 36, 10
+    CONTROL         "Middle", IDC_PICT_ALIGN_MIDDLE, "Button", 
+                    BS_AUTORADIOBUTTON, 92, 24, 36, 10
+    CONTROL         "Bottom", IDC_PICT_ALIGN_BOT, "Button", 
+                    BS_AUTORADIOBUTTON, 92, 34, 36, 10
+    CONTROL         "Baseline offset", IDC_OFFSET, "Button", 
+                    BS_AUTORADIOBUTTON, 92, 48, 62, 10
+    DEFPUSHBUTTON   "OK", IDOK, 78, 81, 42, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 126, 81, 44, 14
+    GROUPBOX        "Picture Size (inches)", IDC_PICT_SIZE_LBL, 5, 2, 76, 75
+    LTEXT           "Twips", -1, 136, 61, 28, 8
+    EDITTEXT        IDC_OFFSET_VAL, 101, 59, 32, 12, ES_AUTOHSCROLL
+END
+
+PARABOXPARAM DIALOG 159, 44, 145, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Paragraph Box Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Sides", -1, 7, 7, 54, 84
+    CONTROL         "Top", IDC_BOX_TOP, "Button", BS_AUTO3STATE | WS_TABSTOP, 
+                    17, 44, 34, 10
+    CONTROL         "Bottom", IDC_BOX_BOT, "Button", BS_AUTO3STATE | 
+                    WS_TABSTOP, 17, 55, 34, 10
+    CONTROL         "Left", IDC_BOX_LEFT, "Button", BS_AUTO3STATE | 
+                    WS_TABSTOP, 17, 16, 34, 10
+    CONTROL         "Right", IDC_BOX_RIGHT, "Button", BS_AUTO3STATE | 
+                    WS_TABSTOP, 17, 27, 34, 10
+    GROUPBOX        "Type", -1, 69, 7, 69, 44
+    CONTROL         "Double Frame", IDC_BOX_DOUBLE, "Button", BS_AUTO3STATE | 
+                    WS_TABSTOP, 75, 22, 58, 10
+    CONTROL         "Thick Frame", IDC_BOX_THICK, "Button", BS_AUTO3STATE | 
+                    WS_TABSTOP, 75, 34, 55, 10
+    LTEXT           "Shading %", -1, 69, 61, 37, 8
+    EDITTEXT        IDC_SHADING, 107, 59, 31, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 31, 97, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 88, 97, 50, 14
+    CONTROL         "Between", IDC_BOX_BETWEEN, "Button", BS_AUTO3STATE | 
+                    WS_TABSTOP, 17, 72, 42, 10
+    PUSHBUTTON      "Border Color...", IDC_COLOR, 68, 76, 70, 14
+END
+
+PASTESPECIALPARAM DIALOG 30, 42, 214, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Paste Special"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Source: ", -1, 9, 7, 29, 8
+    LTEXT           "Paste Source", IDC_PASTE_SOURCE, 40, 7, 159, 8
+    LTEXT           "Paste Item", IDC_PASTE_ITEM, 40, 17, 155, 8
+    LTEXT           "Data Type:", 101, 7, 31, 42, 8
+    LISTBOX         IDC_LIST_BOX, 7, 41, 144, 57, LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Paste", IDC_PASTE, 157, 41, 50, 14
+    PUSHBUTTON      "Paste Link", IDC_PASTE_LINK, 157, 57, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 157, 84, 50, 14
+END
+
+INSERTOBJECTPARAM DIALOG 6, 26, 128, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Object"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Object Type:", -1, 7, 7, 55, 8
+    LISTBOX         IDC_LIST_BOX, 7, 18, 113, 69, LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 7, 93, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 71, 93, 50, 14
+END
+
+TABLEPARAM DIALOG 41, 78, 120, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "New Table Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Number of Rows:", -1, 9, 9, 63, 12
+    EDITTEXT        IDC_TABLE_ROWS, 81, 7, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Number of Columns:", 101, 7, 24, 67, 8
+    EDITTEXT        IDC_TABLE_COLS, 81, 23, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 7, 43, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 63, 43, 50, 14
+END
+
+DELETECELLSPARAM DIALOG 32, 60, 122, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Delete Table Cells"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "", -1, 7, 7, 108, 39
+    CONTROL         "Delete Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 12, 56, 10
+    CONTROL         "Delete Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 23, 64, 10
+    CONTROL         "Delete Rows", IDC_TABLE_SEL_ROWS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 33, 58, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 52, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 65, 52, 50, 14
+END
+
+ROWPOSITIONPARAM DIALOG 6, 18, 121, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Table Row Alignment"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "", -1, 7, 7, 107, 46
+    CONTROL         "Left Justified", IDC_JUST_LEFT, "Button", 
+                    BS_AUTORADIOBUTTON, 15, 16, 70, 10
+    CONTROL         "Centered", IDC_JUST_CENTER, "Button", 
+                    BS_AUTORADIOBUTTON, 15, 26, 52, 10
+    CONTROL         "Right Justified", IDC_JUST_RIGHT, "Button", 
+                    BS_AUTORADIOBUTTON, 15, 36, 66, 10
+    CONTROL         "All Rows in the Table", IDC_TABLE_ALL_ROWS, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 7, 59, 82, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 74, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 64, 74, 50, 14
+END
+
+CELLBORDERPARAM DIALOG 30, 42, 175, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Cell Border"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 6, 7, 75, 78
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON, 
+                    11, 17, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 34, 60, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 51, 50, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    11, 68, 46, 10
+    GROUPBOX        "Border Width (Twips)", -1, 86, 7, 82, 78
+    LTEXT           "Top", -1, 96, 21, 20, 8
+    EDITTEXT        IDC_BOX_TOP, 130, 19, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Bottom", -1, 96, 38, 30, 8
+    EDITTEXT        IDC_BOX_BOT, 130, 35, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Left", -1, 96, 53, 20, 8
+    EDITTEXT        IDC_BOX_LEFT, 130, 51, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Right", -1, 96, 69, 20, 8
+    EDITTEXT        IDC_BOX_RIGHT, 130, 67, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Cell Text Margin (Twips)", 201, 6, 108, 79, 8
+    EDITTEXT        IDC_MARGIN, 89, 106, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 63, 129, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 117, 129, 50, 14
+    CONTROL         "Draw outline border around the selected cells", 
+                    IDC_OUTLINE, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 6, 
+                    90, 164, 10
+END
+
+CELLSHADINGPARAM DIALOG 32, 44, 121, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Cell Shading Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 7, 7, 71, 54
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON, 
+                    11, 17, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 28, 61, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 39, 56, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    11, 49, 58, 10
+    LTEXT           "Shading Percentage", -1, 7, 66, 70, 8
+    EDITTEXT        IDC_CELL_SHADE, 80, 65, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 7, 82, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 64, 82, 50, 14
+END
+
+PRINTPREVIEW DIALOG 2, 18, 324, 14
+STYLE WS_CHILD | WS_VISIBLE | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_PV_ZOOM, 8, 0, 64, 89, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Two Pages", IDC_PV_PAGES, 79, 0, 58, 14
+    PUSHBUTTON      "Print", IDC_PV_PRINT, 143, 0, 58, 14
+    PUSHBUTTON      "Close", IDC_PV_CLOSE, 207, 0, 58, 14
+    LTEXT           "Pg: ", IDC_PV_PAGE_NO, 277, 3, 41, 8
+END
+
+PARASPACEPARAM DIALOG 5, 71, 169, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Paragraph Spacing Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Space Before Paragraph (points)", -1, 9, 53, 113, 8
+    EDITTEXT        IDC_PARA_SPACE_BEF, 127, 51, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Space After Paragraph (points)", -1, 9, 71, 108, 8
+    EDITTEXT        IDC_PARA_SPACE_AFT, 127, 68, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 56, 98, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 113, 98, 50, 14
+    CONTROL         "", 101, "Static", SS_BLACKFRAME, 5, 45, 159, 44
+    GROUPBOX        "Line Spacing", 102, 5, 4, 160, 36
+    COMBOBOX        IDC_LIST_BOX, 10, 20, 48, 81, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_PARA_SPACE, 75, 19, 32, 14, ES_AUTOHSCROLL
+    LTEXT           "Points", IDC_PARA_SPACE_LBL, 114, 22, 29, 8
+END
+
+FOOTNOTEPARAM DIALOG 10, 18, 237, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Footnote Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Footnote Marker", -1, 7, 8, 57, 8
+    EDITTEXT        IDC_FNOTE_CHAR, 65, 7, 29, 14, ES_AUTOHSCROLL
+    LTEXT           "Footnote Text", -1, 7, 20, 51, 8
+    EDITTEXT        IDC_FNOTE_TEXT, 7, 29, 223, 14, ES_AUTOHSCROLL
+    CONTROL         "Superscript Footnote Marker", IDC_FNOTE_SUPSCR, 
+                    "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 7, 46, 106, 10
+    DEFPUSHBUTTON   "OK", IDOK, 123, 56, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 180, 56, 50, 14
+END
+
+DRAWOBJECTPARAM DIALOG 6, 18, 121, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Drawing Object Type"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Object Type", -1, 7, 7, 107, 43
+    CONTROL         "Text Box", IDC_TEXT_BOX, "Button", BS_AUTORADIOBUTTON, 
+                    13, 15, 45, 10
+    CONTROL         "Rectangle", IDC_RECT, "Button", BS_AUTORADIOBUTTON, 13, 
+                    26, 48, 10
+    CONTROL         "Line", IDC_LINE, "Button", BS_AUTORADIOBUTTON, 13, 36, 
+                    39, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 53, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 64, 53, 50, 14
+END
+
+EDITSTYLEPARAM DIALOG 68, 37, 189, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Stylesheet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Type", -1, 7, 13, 78, 36
+    CONTROL         "Paragraph Style", IDC_SS_PARA, "Button", 
+                    BS_AUTORADIOBUTTON, 13, 25, 69, 10
+    CONTROL         "Character Style", IDC_SS_CHAR, "Button", 
+                    BS_AUTORADIOBUTTON, 13, 36, 66, 10
+    LTEXT           "Select a style to edit", IDC_SS_BOX_LABEL, 103, 7, 71, 
+                    8
+    LISTBOX         IDC_LIST_BOX, 95, 17, 86, 74, LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Create new style", IDC_SS_NEW, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 7, 63, 67, 10
+    LTEXT           "Style Name:", IDC_SS_NAME_LABEL, 7, 74, 60, 8
+    EDITTEXT        IDC_SS_NAME, 7, 86, 79, 12, ES_AUTOHSCROLL
+    GROUPBOX        "", -1, 7, 103, 175, 65
+    LTEXT           "Select a style to edit or type in a new style name.", 
+                    -1, 11, 111, 169, 8
+    LTEXT           "Click 'Ok' to begin recording the style attributes.", 
+                    -1, 11, 119, 166, 8
+    LTEXT           "You can select paragraph or font option selections ", 
+                    101, 11, 127, 166, 8
+    LTEXT           "from the menu, toolbar, or the ruler.  To end the ", 
+                    102, 11, 135, 170, 8
+    LTEXT           "stylesheet recording, select the 'Edit Style' option", 
+                    103, 11, 143, 163, 8
+    LTEXT           "from the edit menu or click anywhere on the text.", 104, 
+                    11, 151, 169, 8
+    DEFPUSHBUTTON   "OK", IDOK, 73, 173, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 132, 173, 50, 14
+END
+
+SELECTSTYLEPARAM DIALOG 11, 20, 119, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select a Style"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_BOX, 7, 7, 104, 74, LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 7, 85, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 62, 85, 50, 14
+END
+
+ZOOMPARAM DIALOG 6, 18, 137, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Zoom Parameter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Zoom Percent (10 to 200)", -1, 7, 9, 88, 8
+    EDITTEXT        IDC_PERCENT, 98, 7, 20, 14, ES_AUTOHSCROLL
+    LTEXT           "%", -1, 121, 9, 9, 8
+    DEFPUSHBUTTON   "OK", IDOK, 16, 26, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 71, 26, 50, 14
+END
+
+SETTABPARAM DIALOG 9, 18, 131, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set a Tab Position"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Tab position in Inches", IDC_UNITS, 8, 9, 77, 8
+    COMBOBOX        IDC_LIST_BOX, 86, 7, 36, 89, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Tab Type", -1, 7, 23, 52, 55, WS_GROUP
+    CONTROL         "Left", IDC_TAB_TYPE_LEFT, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 12, 33, 39, 10
+    CONTROL         "Right", IDC_TAB_TYPE_RIGHT, "Button", 
+                    BS_AUTORADIOBUTTON, 12, 44, 39, 10
+    CONTROL         "Center", IDC_TAB_TYPE_CENTER, "Button", 
+                    BS_AUTORADIOBUTTON, 12, 54, 39, 10
+    CONTROL         "Decimal", IDC_TAB_TYPE_DECIMAL, "Button", 
+                    BS_AUTORADIOBUTTON, 12, 63, 39, 10
+    GROUPBOX        "Tab Leader", -1, 67, 23, 57, 55, WS_GROUP
+    CONTROL         "None", IDC_TAB_NONE, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 72, 33, 39, 10
+    CONTROL         "Dots", IDC_TAB_DOT, "Button", BS_AUTORADIOBUTTON, 72, 
+                    44, 39, 10
+    CONTROL         "Hyphens", IDC_TAB_HYPH, "Button", BS_AUTORADIOBUTTON, 
+                    72, 55, 44, 10
+    CONTROL         "Underline", IDC_TAB_ULINE, "Button", BS_AUTORADIOBUTTON, 
+                    72, 65, 45, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 82, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 74, 82, 50, 14
+END
+
+ROWHEIGHTPARAM DIALOG 6, 14, 146, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Row Height Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Height", 101, 7, 7, 116, 26
+    CONTROL         "Auto", IDC_AUTO, "Button", BS_AUTORADIOBUTTON, 11, 17, 
+                    27, 10
+    CONTROL         "Minimum", IDC_MIN, "Button", BS_AUTORADIOBUTTON, 41, 17, 
+                    39, 10
+    CONTROL         "Exact", IDC_EXACT, "Button", BS_AUTORADIOBUTTON, 83, 17, 
+                    31, 10
+    LTEXT           "Height (twips)", IDC_HEIGHT_LABEL, 7, 37, 49, 8
+    EDITTEXT        IDC_HEIGHT, 59, 35, 26, 14, ES_AUTOHSCROLL
+    CONTROL         "Apply to all rows in the current table", 
+                    IDC_TABLE_ALL_ROWS, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 7, 52, 126, 10
+    DEFPUSHBUTTON   "OK", IDOK, 30, 69, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 89, 69, 50, 14
+END
+
+OBJECTPOSPARAM DIALOG 13, 18, 136, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Object Position Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Vertical Position Relative to", -1, 7, 7, 122, 46, 
+                    WS_GROUP
+    CONTROL         "Top of the Page", IDC_VERT_PAGE, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP, 19, 18, 86, 
+                    10
+    CONTROL         "Top Margin", IDC_VERT_MARG, "Button", 
+                    BS_AUTORADIOBUTTON, 19, 29, 71, 10
+    CONTROL         "Current Paragraph", IDC_VERT_PARA, "Button", 
+                    BS_AUTORADIOBUTTON, 19, 39, 83, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 57, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 78, 57, 51, 14
+END
+
+OBJECTATTRIBPARAM DIALOG 10, 15, 250, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Line and Fill attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Line Attributes", 102, 7, 6, 104, 110
+    LTEXT           "Thickness (twips)", -1, 12, 24, 64, 8
+    EDITTEXT        IDC_LINE_THICK, 79, 22, 23, 12, ES_AUTOHSCROLL
+    CONTROL         "Draw Line or Border", IDC_LINE_DRAW, "Button", 
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP, 12, 40, 90, 
+                    10
+    GROUPBOX        "Fill Attributes", -1, 116, 6, 125, 35
+    CONTROL         "Transparent", IDC_FILL_XPARENT, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 124, 23, 56, 10
+    PUSHBUTTON      "Color", IDC_FILL_COLOR, 180, 20, 49, 14
+    PUSHBUTTON      "Color", IDC_LINE_COLOR, 13, 69, 29, 32
+    GROUPBOX        "", 101, 45, 66, 61, 35
+    CONTROL         "Solid Line", IDC_LINE_SOLID, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP, 49, 76, 46, 10
+    CONTROL         "Dotted Line", IDC_LINE_DOTTED, "Button", 
+                    BS_AUTORADIOBUTTON, 49, 87, 51, 10
+    LTEXT           "Z Order", -1, 116, 103, 31, 8
+    EDITTEXT        IDC_ZORDER, 153, 101, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 55, 126, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 114, 126, 50, 14
+    CONTROL         "Wrap Through", IDC_WRAP_THRU, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP, 121, 56, 72, 10
+    CONTROL         "No Wrap", IDC_NO_WRAP, "Button", BS_AUTORADIOBUTTON, 
+                    121, 66, 72, 10
+    CONTROL         "Wrap Around the Object", IDC_WRAP_AROUND, "Button", 
+                    BS_AUTORADIOBUTTON, 121, 76, 95, 10
+    GROUPBOX        "Text Wrapping", -1, 116, 45, 125, 50, WS_GROUP
+END
+
+CELLWIDTHFLAGPARAM DIALOG 33, 44, 192, 138
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Cell Width Type"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 7, 7, 178, 54
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON, 
+                    11, 17, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 28, 60, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 39, 64, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    11, 49, 58, 10
+    GROUPBOX        "Cell Width", -1, 7, 65, 178, 47, WS_GROUP
+    CONTROL         "Best Fit", IDC_BEST_FIT, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 9, 75, 39, 10
+    CONTROL         "Current Width", IDC_FIX_WIDTH, "Button", 
+                    BS_AUTORADIOBUTTON, 9, 86, 76, 10
+    CONTROL         "Current Width as Percentage of the Table Width", 
+                    IDC_FIX_WIDTH_PCT, "Button", BS_AUTORADIOBUTTON, 9, 99, 
+                    167, 10
+    DEFPUSHBUTTON   "OK", IDOK, 82, 117, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 135, 117, 50, 14
+END
+
+CELLCOLORPARAM DIALOG 32, 44, 140, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Cell Color Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 7, 7, 71, 54
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON, 
+                    11, 17, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 28, 61, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 39, 53, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    11, 49, 58, 10
+    PUSHBUTTON      "Set Color...", IDC_COLOR, 83, 7, 50, 14
+    DEFPUSHBUTTON   "OK", IDOK, 83, 26, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 83, 46, 50, 14
+END
+
+CELLVERTALIGNPARAM DIALOG 32, 44, 170, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Cell Vertical Alignment"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 7, 7, 71, 54
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 11, 18, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 29, 61, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 39, 64, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    11, 49, 58, 10
+    GROUPBOX        "Vertical Alignment", -1, 91, 7, 72, 52, WS_GROUP
+    CONTROL         "Top", IDC_ALIGN_TOP, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 99, 17, 28, 10
+    CONTROL         "Center", IDC_ALIGN_CTR, "Button", BS_AUTORADIOBUTTON, 
+                    99, 27, 33, 10
+    CONTROL         "Bottom", IDC_ALIGN_BOT, "Button", BS_AUTORADIOBUTTON, 
+                    99, 37, 39, 10
+    CONTROL         "Baseline", IDC_ALIGN_BASE, "Button", BS_AUTORADIOBUTTON, 
+                    99, 47, 39, 10
+    DEFPUSHBUTTON   "OK", IDOK, 49, 66, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 113, 66, 50, 14
+END
+
+BOOKMARKPARAM DIALOG 73, 22, 179, 163
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Bookmark"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_LIST_BOX, 7, 7, 165, 76, CBS_SIMPLE | CBS_SORT | 
+                    CBS_HASSTRINGS | CBS_NOINTEGRALHEIGHT | WS_VSCROLL
+    PUSHBUTTON      "Insert", IDC_INSERT, 7, 88, 77, 14
+    DEFPUSHBUTTON   "Go to", IDC_GOTO, 94, 88, 77, 14
+    PUSHBUTTON      "Delete", IDC_DELETE, 7, 110, 77, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 94, 137, 77, 15
+    PUSHBUTTON      "Set Page Reference", IDC_PAGE_REF, 94, 110, 77, 14
+END
+
+CHARSPACEPARAM DIALOG 85, 42, 157, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Character Spacing"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "", -1, 7, 7, 50, 42
+    CONTROL         "Expand", IDC_EXPAND, "Button", BS_AUTORADIOBUTTON, 11, 
+                    15, 39, 10
+    CONTROL         "Compress", IDC_REDUCE, "Button", BS_AUTORADIOBUTTON, 11, 
+                    25, 43, 10
+    CONTROL         "Normal", IDC_RESET, "Button", BS_AUTORADIOBUTTON, 11, 
+                    36, 39, 10
+    GROUPBOX        "", -1, 62, 7, 88, 42
+    CTEXT           "Adjustment (Twips)", IDC_ADJ_TITLE, 67, 15, 45, 19
+    EDITTEXT        IDC_ADJ, 114, 17, 30, 15, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 43, 53, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 100, 53, 50, 14
+END
+
+DATAFIELDPARAM DIALOG 75, 29, 149, 87
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Data Field Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Field Name", -1, 7, 7, 45, 8
+    EDITTEXT        IDC_FIELD_NAME, 7, 17, 135, 14, ES_AUTOHSCROLL
+    LTEXT           "Field Data", -1, 7, 36, 72, 8
+    EDITTEXT        IDC_FIELD_DATA, 7, 46, 135, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 35, 66, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 92, 65, 50, 15
+END
+
+INPUTFIELDPARAM DIALOG 75, 29, 172, 122
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Input Field Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Field Name", -1, 7, 7, 45, 8
+    EDITTEXT        IDC_FIELD_NAME, 7, 17, 158, 14, ES_AUTOHSCROLL
+    LTEXT           "Initial Data", -1, 7, 36, 72, 8
+    EDITTEXT        IDC_FIELD_DATA, 7, 46, 158, 14, ES_AUTOHSCROLL
+    LTEXT           "Maximum Field Length", -1, 7, 71, 75, 8
+    EDITTEXT        IDC_MAX_LEN, 87, 69, 32, 14, ES_AUTOHSCROLL
+    PUSHBUTTON      "Font...", IDC_FONT, 125, 69, 39, 14
+    CONTROL         "Border Around the Field", IDC_BORDER, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 7, 87, 95, 10
+    DEFPUSHBUTTON   "OK", IDOK, 59, 100, 50, 15
+    PUSHBUTTON      "Cancel", IDCANCEL, 115, 100, 50, 15
+END
+
+CHECKBOXFIELDPARAM DIALOG 75, 29, 172, 73
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Checkbox Field Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Field Name", -1, 7, 7, 45, 8
+    EDITTEXT        IDC_FIELD_NAME, 7, 17, 158, 14, ES_AUTOHSCROLL
+    CONTROL         "Checked", IDC_CHECKED, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 7, 36, 51, 10
+    LTEXT           "Size (twips)", -1, 85, 36, 43, 8
+    EDITTEXT        IDC_BOXSIZE, 133, 33, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 59, 52, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 115, 52, 50, 14
+END
+
+EDITINPUTFIELDPARAM DIALOG 75, 29, 172, 96
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Edit Input Field Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Field Name", -1, 7, 7, 45, 8
+    EDITTEXT        IDC_FIELD_NAME, 7, 17, 158, 14, ES_AUTOHSCROLL
+    LTEXT           "Maximum Characters", -1, 7, 36, 70, 8
+    EDITTEXT        IDC_MAX_LEN, 79, 34, 26, 14, ES_AUTOHSCROLL
+    CONTROL         "Border Around the Field", IDC_BORDER, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 7, 56, 95, 10
+    PUSHBUTTON      "Font...", IDC_FONT, 7, 75, 50, 14
+    DEFPUSHBUTTON   "OK", IDOK, 62, 74, 50, 15
+    PUSHBUTTON      "Cancel", IDCANCEL, 115, 75, 50, 14
+END
+
+DATEPARAM DIALOG 79, 55, 117, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Current Date/Time"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_BOX, 7, 7, 103, 74, WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 7, 81, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 60, 81, 50, 14
+END
+
+EndnoteParam DIALOG 10, 18, 237, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Endnote Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Endnote Marker", -1, 7, 8, 57, 8
+    EDITTEXT        IDC_FNOTE_CHAR, 65, 7, 29, 14, ES_AUTOHSCROLL
+    LTEXT           "Endnote Text", -1, 7, 20, 51, 8
+    EDITTEXT        IDC_FNOTE_TEXT, 7, 29, 223, 14, ES_AUTOHSCROLL
+    CONTROL         "Superscript Endnote Marker", IDC_FNOTE_SUPSCR, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 7, 46, 106, 10
+    DEFPUSHBUTTON   "OK", IDOK, 123, 56, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 180, 56, 50, 14
+END
+
+ListSelectParam DIALOG 11, 20, 119, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select a List"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_BOX, 7, 7, 104, 74, LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 7, 85, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 62, 85, 50, 14
+END
+
+ListPropParam DIALOG 27, 37, 179, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "List properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "List Name", 201, 10, 15, 40, 8
+    EDITTEXT        IDC_NAME, 53, 13, 114, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 69, 72, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 123, 72, 50, 14
+    CONTROL         "Multi-level list", IDC_NESTED, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 10, 37, 57, 10
+    CONTROL         "Restart at section break", IDC_RESTART_AT_SEC, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 10, 48, 126, 10
+    GROUPBOX        "", -1, 4, 2, 170, 64
+END
+
+ListOrSelectParam DIALOG 11, 20, 119, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select a List Override"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_BOX, 7, 7, 104, 74, LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 7, 85, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 62, 85, 50, 14
+END
+
+ListOrPropParam DIALOG 27, 37, 155, 91
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "List Override properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "List to Override", 201, 10, 13, 95, 8
+    DEFPUSHBUTTON   "OK", IDOK, 45, 70, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 99, 70, 50, 14
+    CONTROL         "Override Levels", IDC_OVERRIDE, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 10, 46, 71, 10
+    GROUPBOX        "", -1, 4, 2, 145, 62
+    COMBOBOX        IDC_LIST_BOX, 10, 23, 131, 81, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+ListLevelParam DIALOG 20, 60, 360, 229
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "List Level properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 251, 208, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 305, 208, 50, 14
+    CONTROL         "Restart numbering when override changes for a list", 
+                    IDC_RESTART, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 20, 
+                    73, 187, 10
+    GROUPBOX        "", -1, 5, 3, 350, 198
+    COMBOBOX        IDC_LIST_BOX, 74, 24, 131, 81, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List item", IDC_LIST_ITEM, "Button", BS_AUTORADIOBUTTON, 
+                    19, 25, 53, 10
+    CONTROL         "List override", IDC_LIST_OR, "Button", 
+                    BS_AUTORADIOBUTTON, 19, 43, 53, 10
+    COMBOBOX        IDC_LIST_OR_BOX, 74, 42, 131, 81, CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "List Level", 101, 273, 43, 38, 8
+    COMBOBOX        IDC_LEVEL, 313, 41, 27, 63, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Level Selection", -1, 13, 13, 334, 48
+    LTEXT           "Start at: ", 102, 228, 83, 34, 8
+    EDITTEXT        IDC_START_AT, 284, 81, 55, 12, ES_AUTOHSCROLL
+    LTEXT           "Number Type", -1, 228, 119, 44, 8
+    COMBOBOX        IDC_NUM_TYPE, 237, 130, 104, 47, CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Character After", -1, 228, 101, 55, 8
+    COMBOBOX        IDC_CHAR_AFT, 284, 99, 55, 47, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Number Font...", IDC_FONTS, 284, 172, 55, 14
+    LTEXT           "Number text", -1, 17, 136, 47, 8
+    EDITTEXT        IDC_TEXT, 69, 135, 140, 12, ES_AUTOHSCROLL
+    LTEXT           "(The list level number must be surrounded by a pair of '~'", 
+                    -1, 17, 152, 194, 8
+    LTEXT           "Example:  (~1~) might print as", -1, 18, 161, 149, 8
+    LTEXT           "    (1) First item.", -1, 15, 171, 144, 8
+    LTEXT           "    (2) Second item.", -1, 15, 180, 144, 8
+    CONTROL         "Change previous level number to an Arabic format", 
+                    IDC_LEGAL, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 20, 
+                    84, 182, 10
+    CONTROL         "Override font attributes of the list level", 
+                    IDC_REFORMAT, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 20, 
+                    96, 139, 10
+    CONTROL         "Do not reset numbering when the parent level changes", 
+                    IDC_NO_RESET, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 20, 
+                    107, 194, 10
+    GROUPBOX        "", -1, 13, 64, 203, 59
+    GROUPBOX        "", -1, 12, 126, 204, 68
+    GROUPBOX        "", -1, 222, 65, 126, 128
+END
+
+ListParaParam DIALOG 99, 65, 190, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Apply paragraph numbering using Lists"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_BOX, 14, 27, 161, 111, LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 78, 148, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 133, 148, 50, 14
+    COMBOBOX        IDC_LEVEL, 127, 12, 48, 72, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Level", -1, 96, 15, 26, 8
+    LTEXT           "List", -1, 14, 14, 20, 8
+    GROUPBOX        "", 101, 6, 4, 178, 141
+END
+
+CellBorderColorParam DIALOG 32, 42, 156, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Cell Border Color"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 4, 7, 72, 91
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON, 
+                    9, 24, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 9, 41, 60, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 9, 58, 50, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    9, 75, 46, 10
+    GROUPBOX        "Border Color", -1, 79, 7, 71, 91
+    DEFPUSHBUTTON   "OK", IDOK, 45, 102, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 99, 102, 50, 14
+    PUSHBUTTON      "Top...", IDC_COLOR_TOP, 95, 35, 40, 14
+    PUSHBUTTON      "Bottom...", IDC_COLOR_BOT, 95, 49, 40, 14
+    PUSHBUTTON      "Left...", IDC_COLOR_LEFT, 95, 63, 40, 14
+    PUSHBUTTON      "Right...", IDC_COLOR_RIGHT, 95, 77, 40, 14
+    PUSHBUTTON      "All...", IDC_COLOR_ALL, 95, 18, 40, 14
+END
+
+CellWidthParam DIALOG 32, 42, 197, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Cell Width"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 4, 7, 72, 55
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON, 
+                    9, 17, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 9, 27, 60, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 9, 37, 50, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    9, 47, 46, 10
+    GROUPBOX        "", -1, 81, 7, 111, 55
+    LTEXT           "Cell Width (Twips)", -1, 85, 22, 62, 8
+    LTEXT           "Cell Margin (Twips)", 201, 85, 40, 65, 8
+    EDITTEXT        IDC_MARGIN, 153, 38, 32, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 87, 68, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 141, 68, 50, 14
+    EDITTEXT        IDC_WIDTH, 153, 20, 32, 14, ES_AUTOHSCROLL
+END
+
+TextRotationParam DIALOG 55, 70, 117, 85
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Text Rotation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Text direction", -1, 7, 7, 104, 50
+    CONTROL         "Horizontal", IDC_HORZ, "Button", BS_AUTORADIOBUTTON, 17, 
+                    20, 63, 10
+    CONTROL         "Top to Bottom", IDC_TOP_TO_BOT, "Button", 
+                    BS_AUTORADIOBUTTON, 17, 30, 60, 10
+    CONTROL         "Bottom to Top", IDC_BOT_TO_TOP, "Button", 
+                    BS_AUTORADIOBUTTON, 17, 40, 60, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 63, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 61, 63, 50, 14
+END
+
+ParaTextFlowParam DIALOG 64, 69, 117, 85
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Paragraph Text Flow"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Text flow", -1, 7, 7, 104, 50
+    CONTROL         "Left-to-Right", IDC_LTR, "Button", BS_AUTORADIOBUTTON, 
+                    17, 20, 63, 10
+    CONTROL         "Right-to-Left", IDC_RTL, "Button", BS_AUTORADIOBUTTON, 
+                    17, 30, 60, 10
+    CONTROL         "Default", IDC_DEF, "Button", BS_AUTORADIOBUTTON, 17, 40, 
+                    60, 10
+    DEFPUSHBUTTON   "OK", IDOK, 7, 63, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 61, 63, 50, 14
+END
+
+RowTextFlowParam DIALOG 119, 87, 146, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Table Text Flow"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Text Flow", -1, 7, 7, 130, 50
+    CONTROL         "Default text flow", IDC_DEF, "Button", 
+                    BS_AUTORADIOBUTTON, 14, 42, 75, 10
+    CONTROL         "Right-to-left", IDC_RTL, "Button", BS_AUTORADIOBUTTON, 
+                    14, 30, 61, 10
+    CONTROL         "Left-to-right", IDC_LTR, "Button", BS_AUTORADIOBUTTON, 
+                    14, 18, 68, 10
+    CONTROL         "Apply to all rows in the current table", 
+                    IDC_TABLE_ALL_ROWS, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 7, 64, 126, 10
+    DEFPUSHBUTTON   "OK", IDOK, 28, 81, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 87, 81, 50, 14
+END
+
+100 DIALOG 6, 18, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog Title"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+HyperlinkParam DIALOG 75, 29, 149, 87
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Insert Hyperlink"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Link Text", -1, 7, 7, 45, 8
+    EDITTEXT        IDC_LINK_TEXT, 7, 17, 135, 14, ES_AUTOHSCROLL
+    LTEXT           "Link Code (or URL)", -1, 7, 36, 72, 8
+    EDITTEXT        IDC_LINK_CODE, 7, 46, 135, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 35, 66, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 92, 65, 50, 15
+END
+
+200 DIALOG 150, 101, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+OverrideBinParam DIALOG 73, 25, 120, 158
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Paper Bin Override Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "First Copy to Override", IDC_COPY_LBL, 9, 29, 74, 8
+    EDITTEXT        IDC_COPY, 87, 27, 21, 14, ES_AUTOHSCROLL
+    CONTROL         "Override", IDC_OVERRIDE, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 10, 10, 51, 10
+    LTEXT           "Bin Selection", IDC_BIN_LBL, 9, 43, 52, 8
+    DEFPUSHBUTTON   "OK", IDOK, 19, 138, 46, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 69, 138, 45, 14
+    LISTBOX         IDC_BIN, 9, 54, 100, 74, LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "", -1, 5, 2, 109, 131
+END
+
+300 DIALOG 6, 18, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog Title"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+CellRotationParam DIALOG 74, 69, 170, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Cell Text Rotation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range", -1, 7, 7, 71, 54
+    CONTROL         "All Cells", IDC_TABLE_ALL, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 11, 18, 39, 10
+    CONTROL         "Selected Cells", IDC_TABLE_SEL_CELLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 29, 61, 10
+    CONTROL         "Columns", IDC_TABLE_SEL_COLS, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 39, 64, 10
+    CONTROL         "Rows", IDC_TABLE_SEL_ROWS, "Button", BS_AUTORADIOBUTTON, 
+                    11, 49, 58, 10
+    GROUPBOX        "Text Direction", -1, 91, 7, 72, 52, WS_GROUP
+    CONTROL         "Horizontal", IDC_HORZ, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP, 97, 17, 55, 10
+    CONTROL         "Top to Bottom", IDC_TOP_TO_BOT, "Button", 
+                    BS_AUTORADIOBUTTON, 97, 30, 61, 10
+    CONTROL         "Bottom to Top", IDC_BOT_TO_TOP, "Button", 
+                    BS_AUTORADIOBUTTON, 97, 43, 61, 10
+    DEFPUSHBUTTON   "OK", IDOK, 49, 66, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 113, 66, 50, 14
+END

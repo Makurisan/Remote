@@ -1,0 +1,6 @@
+; XPubTools.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XPubTools"
+
+EXPORTS
+    ; Explicit exports can go here
