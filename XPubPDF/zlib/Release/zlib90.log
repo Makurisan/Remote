@@ -1,9 +1,0 @@
-﻿Build started 26.09.2022 08:14:11.
-     1>Project "G:\Multimedia\XPublisher\XPubPDF\zlib\zlib90.vcxproj" on node 2 (clean target(s)).
-     1>_PrepareForClean:
-         Deleting file ".\Release\zlib.lastbuildstate".
-     1>Done Building Project "G:\Multimedia\XPublisher\XPubPDF\zlib\zlib90.vcxproj" (clean target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.01
