@@ -1,0 +1,11 @@
+; XPubCnvFTag.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XPubCnvFTag"
+
+EXPORTS
+  RegisterAddOnManager
+  UnregisterAddOnManager
+  GetCnvFromAddOnVersion
+  CreateConvertWorkerFrom_
+  CreateConvertWorkerFromClone_
+  ReleaseConvertWorkerFrom_

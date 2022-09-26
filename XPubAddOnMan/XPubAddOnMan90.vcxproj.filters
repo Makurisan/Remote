@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{54b65faa-ae8d-4eaf-80e8-da231aa7bb5c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9937f8ff-17f0-4ccb-bd15-46cf321466ad}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1c0afb84-d824-4961-b01a-174ec24ce854}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="SAddOnManager">
+      <UniqueIdentifier>{72e86cb4-ff49-4a97-8b55-41c0bade9139}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XPubAddOnMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\ConvertWorker.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\FormatWorker.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\FormatWorkerWrappers.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\StyleManager.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\TagBuilder.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\WorkPaperProcessor.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SAddOnManager\XPubAddOnManager.cpp">
+      <Filter>SAddOnManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XPubAddOnMan.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\XPubAddOnMan.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\AddOnManagerExpImp.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\ConvertWorker.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\FormatWorker.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\FormatWorkerWrappers.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\StyleManager.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\TagBuilder.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\WorkPaperProcessor.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\XPubAddOnDeclarations.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SAddOnManager\XPubAddOnManager.h">
+      <Filter>SAddOnManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="XPubAddOnMan.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

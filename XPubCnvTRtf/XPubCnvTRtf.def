@@ -1,0 +1,11 @@
+; XPubCnvTRtf.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XPubCnvTRtf"
+
+EXPORTS
+  RegisterAddOnManager
+  UnregisterAddOnManager
+  GetCnvToAddOnVersion
+  CreateConvertWorkerTo_
+  CreateConvertWorkerToClone_
+  ReleaseConvertWorkerTo_

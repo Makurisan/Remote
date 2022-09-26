@@ -1,0 +1,11 @@
+; XPubCnvTPdf.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XPubCnvTPdf"
+
+EXPORTS
+  RegisterAddOnManager
+  UnregisterAddOnManager
+  GetCnvToAddOnVersion
+  CreateConvertWorkerTo_
+  CreateConvertWorkerToClone_
+  ReleaseConvertWorkerTo_
